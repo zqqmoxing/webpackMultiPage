@@ -1,1 +1,1 @@
-# webpackMultiPage
+# 适合多页开发
