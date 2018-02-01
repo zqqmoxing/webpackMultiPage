@@ -1,0 +1,37 @@
+{
+  "name": "xroute",
+  "version": "1.0.0",
+  "description": "小型路由",
+  "main": "index.js",
+  "dependencies": {
+    "amazeui": "^2.7.2",
+    "art-template": "^4.12.2",
+    "jquery": "^2.2.3"
+  },
+  "devDependencies": {
+    "art-template-loader": "^1.4.3",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "clean-webpack-plugin": "^0.1.17",
+    "css-loader": "^0.28.9",
+    "expose-loader": "^0.7.4",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "file-loader": "^1.1.6",
+    "html-webpack-plugin": "^2.30.1",
+    "html-withimg-loader": "^0.1.16",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "scripts": {
+    "start": "webpack",
+    "server": "webpack-dev-server --open",
+    "build": "webpack --config ./webpack.production.config.js --progress"
+  },
+  "author": "",
+  "license": "ISC"
+}

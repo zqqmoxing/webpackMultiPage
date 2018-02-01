@@ -1,0 +1,23 @@
+{
+    "presets": [
+        [
+            "env",
+            {
+                "targets": { // 配支持的环境
+                    "browsers": [ // 浏览器
+                        "last 2 versions",
+                        "ie >= 7"
+                    ],
+                    "node": "current"
+                },
+//                "debug": true, // debug，编译的时候 console
+                "useBuiltIns": true, // 是否开启自动支持 polyfill
+                "include": [], // 总是启用哪些 plugins
+                "exclude": []  // 强制不启用哪些 plugins，用来防止某些插件被启用
+            }
+        ]
+    ],
+    "plugins": [
+//        "transform-react-jsx" //如果是需要支持 jsx 这个东西要单独装一下。
+    ]
+}

@@ -1,0 +1,9 @@
+{{each data}}
+<li class="">
+    <div>{{$value.name}}</div>
+    <div>{{$value.number}}</div>
+    <div>{{$value.startTime}}</div>
+    <div>{{$value.endTime}}</div>
+    <div>{{$value.area}}</div>
+</li>
+{{/each}}
