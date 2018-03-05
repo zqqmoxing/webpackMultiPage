@@ -1,14 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// css打包成一个文件
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 const extractSass = new ExtractTextPlugin({
-    filename: "css/style.css"
-});
-
+    filename: "css/style.css"//打包的路径+文件名称
+});// css打包成一个文件
 
 // 引入多页面文件列表
 const { HTMLDirs } = require("./src/common/js/config");
@@ -23,12 +21,11 @@ HTMLDirs.forEach((page) => {
     const htmlPlugin = new HtmlWebpackPlugin({
         filename: `${page}.html`,
         template: path.resolve(__dirname, `src/view/${page}.html`),
-        chunks: [page, 'commons'],
+        chunks: [page, 'commons'],//引入的js
     });
     HTMLPlugins.push(htmlPlugin);
     Entries[page] = path.resolve(__dirname, `src/common/js/${page}.js`);
 });
-
 
 // 合并数组
 let plugins = [
@@ -48,16 +45,11 @@ let plugins = [
         filename: 'js/[name].js',
         minChunks: 4,
     }),
-    /* 抽取出webpack的runtime代码()，避免稍微修改一下入口文件就会改动commonChunk，导致原本有效的浏览器缓存失效 */
-    // new webpack.optimize.CommonsChunkPlugin({
-    //     name: 'webpack-runtime',
-    //     filename: 'commons/commons/webpack-runtime.[hash].js',
-    // }),
 ];
 let pluginsAll = plugins.concat(HTMLPlugins);
 
 module.exports = {
-    devtool: 'eval-source-map',
+    devtool: 'eval-source-map',//调试工具
     // entry:  {
     //     app:__dirname + "/src/main.js",
     //     // 第三方库(vendor) 入口
@@ -108,7 +100,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.(png|jpg|jpeg|gif|woff|svg|eot|ttf|woff2)$/,
+                test: /\.(png|jpg|jpeg|gif|woff|svg|eot|ttf|woff2|mp4)$/,
                 loader: 'url-loader',
                 options: {
                     limit: 8192,
@@ -128,7 +120,7 @@ module.exports = {
                     options: 'jQuery'
                 }]
             }
-        ]
+        ],
     },
     plugins: pluginsAll,
     // 配置模块如何解析。
