@@ -1,2 +1,2 @@
 # webpackMultiPage
-webpack3 多页
+webpack3 多页开发
