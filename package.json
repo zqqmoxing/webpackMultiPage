@@ -8,7 +8,7 @@
     "babel-preset-es2015": "^6.24.1",
     "crypto": "^1.0.1",
     "echarts": "^4.1.0",
-    "jquery": "^2.2.3",
+    "jquery": "^3.5.0",
     "jquery-ui": "^1.12.1",
     "photo-sphere-viewer": "^3.4.1",
     "swiper": "^4.3.5",
